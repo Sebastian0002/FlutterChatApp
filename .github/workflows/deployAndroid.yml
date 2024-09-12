@@ -38,12 +38,8 @@ jobs:
         run: >
           flutter build appbundle
           --dart-define=isActions=true
-          --dart-define=API_URL_1=https://api.inversionesbloom.com/gateway-1
-          --dart-define=API_URL_3=https://api.inversionesbloom.com/gateway-3
-          --dart-define=payzenSuccessUrl=https://transacciones.inversionesbloom.com/success
-          --dart-define=payzenCancelUrl=https://transacciones.inversionesbloom.com/cancel
-          --dart-define=payzenRefusedUrl=https://transacciones.inversionesbloom.com/refused
-          --dart-define=payzenReturnUrl=https://transacciones.inversionesbloom.com/return
+          --dart-define=API_BASE=https://socket-server-chat-jhoann-2c28d5d9fb3f.herokuapp.com/api
+          --dart-define=API_SOCKETS=https://socket-server-chat-jhoann-2c28d5d9fb3f.herokuapp.com/
           
       - name: Upload Android Release
         uses: actions/upload-artifact@v4
@@ -51,6 +47,7 @@ jobs:
           name: android-release
           path: build/app/outputs/bundle/release/app-release.aab
   deploy:
+    environment: Android-Store 
     name: Deploy Android Build
     needs: build
     runs-on: ubuntu-latest

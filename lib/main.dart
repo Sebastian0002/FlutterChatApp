@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:real_time_chat/services/provider/providers.dart';
 import 'package:real_time_chat/ui/dimensions.dart';
@@ -6,7 +9,14 @@ import 'package:real_time_chat/ui/routes/routes.dart';
 
 GlobalKey globalKey = GlobalKey();
 Responsive responsive = Responsive();
-void main() {
+void main() async {
+
+  await dotenv.load(
+    fileName: 'assets/.env', 
+    mergeWith: Platform.environment,
+    isOptional: true
+  ); 
+
   runApp(MultiProvider(
     key: Responsive.navigatorKey,
     providers: providers,

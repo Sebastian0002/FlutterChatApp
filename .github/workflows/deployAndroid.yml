@@ -63,4 +63,4 @@ jobs:
         packageName: com.jhoann.realTimeChat
         releaseFiles: app-release.aab
         track: internal
-        status: completed
+        status: draft

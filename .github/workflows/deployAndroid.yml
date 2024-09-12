@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download Android keystore
+      - name: Download Android keystores
         id: android_keystore
         uses: timheuer/base64-to-file@v1.2
         with:

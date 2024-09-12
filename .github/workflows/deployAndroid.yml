@@ -32,7 +32,6 @@ jobs:
       - uses: subosito/flutter-action@v2.12.0
         with:
           channel: 'stable'
-          flutter-version: 3.16.0
           cache: true
       - run: flutter pub get
       - name: build AppBundle with prod env
@@ -64,5 +63,5 @@ jobs:
         serviceAccountJsonPlainText: ${{ secrets.JSON_KEY_STORE }}
         packageName: com.jhoann.realTimeChat
         releaseFiles: app-release.aab
-        track: qa
+        track: internal
         status: completed

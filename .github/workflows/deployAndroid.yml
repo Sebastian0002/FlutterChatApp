@@ -35,7 +35,11 @@ jobs:
           cache: true
       - run: flutter pub get
       - name: build AppBundle with prod env
-        run: ${{ secrets.BUILD_INSTRUCTION_ANDROID }}
+        run: >
+          flutter build appbundle
+          --dart-define=isActions=true
+          --dart-define=API_BASE=https://socket-server-chat-jhoann-2c28d5d9fb3f.herokuapp.com/api
+          --dart-define=API_SOCKETS=https://socket-server-chat-jhoann-2c28d5d9fb3f.herokuapp.com/
       - name: Upload Android Release
         uses: actions/upload-artifact@v4
         with:

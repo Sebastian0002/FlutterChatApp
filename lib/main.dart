@@ -5,8 +5,6 @@ import 'package:real_time_chat/services/provider/providers.dart';
 import 'package:real_time_chat/ui/dimensions.dart';
 import 'package:real_time_chat/ui/routes/routes.dart';
 
-GlobalKey globalKey = GlobalKey();
-Responsive responsive = Responsive();
 void main() async {
 
   await dotenv.load(

@@ -36,7 +36,7 @@ class ScreenLogin extends StatelessWidget {
                 Labels(
                   enabledRedirectText: !authProvider.loading,
                   title: "¿Don't have an account yet?",
-                  redirectText: 'SingUp', 
+                  redirectText: 'SignUp', 
                   onTap: (){
                   Navigator.pushNamed(context, ScreenSignUp.route);
                 },)
@@ -80,6 +80,18 @@ class _FormLoginState extends State<_FormLogin> {
       });
       textController1.clear();
       textController2.clear();
+    }
+
+    void goToScreenUser(){
+      Navigator.pushReplacementNamed(context, ScreenUser.route);
+    }
+
+    void failedLoginDialogAlert(){
+      generalDialogAlert(
+        context: context, 
+        title: "Incorrect credentials to login", 
+        subtitle: authProvider.messageErrorLogin
+      );
     }
 
     return Column(
@@ -126,15 +138,10 @@ class _FormLoginState extends State<_FormLogin> {
             clearControllers();
             if(response == TypesAuth.loginSucces){
               socketsProvider.connect();
-              if(mounted) {Navigator.pushReplacementNamed(context, ScreenUser.route);}
+              if(mounted) goToScreenUser();
             }
             if(response == TypesAuth.loginFailed){
-              if(mounted){
-                generalDialogAlert(
-                  context: context, 
-                  title: "Incorrect credentials to login", 
-                  subtitle: authProvider.messageErrorLogin);
-              } 
+              if(mounted) failedLoginDialogAlert();
             }
           }),
       ],

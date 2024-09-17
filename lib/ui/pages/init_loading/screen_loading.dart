@@ -19,18 +19,23 @@ class _ScreenLoadingState extends State<ScreenLoading> {
 
   void _navigateToPage(){
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
+      
+      void navigateToWithAnimation(Route<dynamic> route){
+        Navigator.pushReplacement(context, route);
+      }
+
       final AuthProvider authProvider = context.read<AuthProvider>();
       final SocketsProvider socketsProvider = context.read<SocketsProvider>();
       final response = await authProvider.isLoggedIn();
       if(response == TypesAuth.redirectHome){
         await socketsProvider.connect();
         if(context.mounted){ 
-          Navigator.pushReplacement(context, homeTransition());
+          navigateToWithAnimation(homeTransition());
         }
       }
       if(response == TypesAuth.redirectLogin){
         if(context.mounted){ 
-          Navigator.pushReplacement(context, loginTransition());
+          navigateToWithAnimation(loginTransition());
         }
       }
       return response;      

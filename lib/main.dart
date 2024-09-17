@@ -15,17 +15,28 @@ void main() async {
   ); 
 
   runApp(MultiProvider(
-    key: Responsive.navigatorKey,
     providers: providers,
     child: const MainApp()));
 }
 
-class MainApp extends StatelessWidget{
+class MainApp extends StatefulWidget{
   const MainApp({super.key});
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_){
+      responsive.initResponsive(context);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    responsive = context.read<Responsive>();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: init,

@@ -3,7 +3,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:real_time_chat/main.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 
 void generalDialogAlert ({
   required BuildContext context,

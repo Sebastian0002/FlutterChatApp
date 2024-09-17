@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:real_time_chat/main.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 import 'package:real_time_chat/services/provider/sockets_provider.dart';
 import 'package:real_time_chat/ui/dialogAlerts/general_dialog_alert.dart';
 import 'package:real_time_chat/ui/pages/login-SignUp/provider/auth_provider.dart';

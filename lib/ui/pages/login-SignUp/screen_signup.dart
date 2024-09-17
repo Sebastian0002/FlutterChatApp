@@ -1,10 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_time_chat/domain/models/user.dart';
-import 'package:real_time_chat/main.dart';
 import 'package:real_time_chat/services/provider/sockets_provider.dart';
 import 'package:real_time_chat/ui/colors/colors.dart';
 import 'package:real_time_chat/ui/dialogAlerts/general_dialog_alert.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 import 'package:real_time_chat/ui/pages/home/screen_users.dart';
 import 'package:real_time_chat/ui/pages/login-SignUp/provider/auth_provider.dart';
 import 'package:real_time_chat/ui/pages/login-SignUp/widgets/bottom_widget.dart';
@@ -19,6 +21,7 @@ class ScreenSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log(responsive.aspectRatio.toString());
     final AuthProvider authProvider = context.watch<AuthProvider>();
     return Scaffold(
       backgroundColor: ColorTheme.backgroundColor,

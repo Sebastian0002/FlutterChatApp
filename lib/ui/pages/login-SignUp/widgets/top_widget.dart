@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:real_time_chat/main.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 
 class WTop extends StatelessWidget {
   const WTop({super.key, this.topText});

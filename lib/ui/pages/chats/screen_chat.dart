@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_time_chat/domain/models/message.dart';
-import 'package:real_time_chat/main.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 import 'package:real_time_chat/services/provider/sockets_provider.dart';
 import 'package:real_time_chat/ui/pages/chats/provider/chat_provider.dart';
 import 'package:real_time_chat/ui/pages/chats/widgets/chat_messages.dart';

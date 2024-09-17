@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:real_time_chat/main.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 import 'package:real_time_chat/ui/pages/login-SignUp/provider/auth_provider.dart';
 
 class WchatMessages extends StatelessWidget {

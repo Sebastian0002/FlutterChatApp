@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class Responsive {
-  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  // static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   double _screenHeight = 0.0;
   double get screenHeight => _screenHeight;
   double _screenWidth = 0.0;
@@ -11,8 +11,8 @@ class Responsive {
   static const _widthDefault = 390;
   static const _heightDefault = 844;
 
-  void initResponsive(){
-    _screenSize = MediaQuery.of(navigatorKey.currentContext!).size;
+  void initResponsive(BuildContext context){
+    _screenSize = MediaQuery.of(context).size;
     _screenHeight = _screenSize.height;
     _screenWidth = _screenSize.width;
   }
@@ -22,3 +22,5 @@ class Responsive {
   double get scaleAverage => ((_screenWidth / _widthDefault)+( _screenHeight / _heightDefault))/2;
   double get aspectRatio => _screenWidth / _screenHeight;
 }
+
+Responsive responsive = Responsive();

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:real_time_chat/main.dart';
 import 'package:real_time_chat/services/provider/sockets_provider.dart';
+import 'package:real_time_chat/ui/dimensions.dart';
 
 import 'package:real_time_chat/ui/pages/screens.dart';
 import 'package:real_time_chat/ui/colors/colors.dart';
